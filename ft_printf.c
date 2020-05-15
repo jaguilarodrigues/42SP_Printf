@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:32:39 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 00:28:04 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 01:28:19 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,25 @@
 
 int		ft_printf(const char *s, ...)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
+	va_list	ap;
 
+	va_start(ap, s);
 	while (s[i])
 	{
-		ft_putchar(s[i++]);
-		len++;
+		if (s[i] != '%')
+		{
+			ft_putchar(s[i++]);
+			len++;
+		}
+		// else
+		// {
+		// 	ft_manage_flag();
+		// }
 	}
+	printf("%s", (char *)va_arg(ap, void *));
+	va_end(ap);
+
 	return (len);
 }

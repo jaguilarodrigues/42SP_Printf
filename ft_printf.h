@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 00:27:43 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 00:55:21 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <limits.h>
+# include <stdarg.h>
 
 # include <stdio.h>
 
