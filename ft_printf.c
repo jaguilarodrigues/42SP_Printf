@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:32:39 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 01:53:36 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 02:17:03 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int		ft_printf(const char *s, ...)
 			ft_putchar(prms.s[prms.i++]);
 			prms.len++;
 		}
-		// else
-		// {
-		// 	ft_manage_flag();
-		// }
+		else
+		{
+			ft_manage_flag(&prms);
+			prms.len++;
+		}
 	}
-	printf("%s", (char *)va_arg(prms.ap, void *));
 	va_end(prms.ap);
 
 	return (prms.len);

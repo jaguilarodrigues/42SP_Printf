@@ -6,7 +6,7 @@
 #    By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 00:38:44 by jaqrodri          #+#    #+#              #
-#    Updated: 2020/05/15 00:19:59 by jaqrodri         ###   ########.fr        #
+#    Updated: 2020/05/15 03:20:26 by jaqrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(NAME): $(OBJECTS)
 	gcc -c $(FLAGS) $(SRCS) -I $(HEADER)
 
 test:$(NAME)
-	gcc $(FLAGS) $(SRCS) $(NAME)
+	gcc -g $(FLAGS) $(SRCS) $(NAME)
 	./a.out
 
 clean:
