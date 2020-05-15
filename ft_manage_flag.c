@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 03:25:35 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 04:36:22 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	ft_manage_flag(t_params *prms)
 	int	j;
 
 	j = prms->i;
-	while(!ft_isspecifier(prms->s[j++]));
-	prms->i = j;
-	printf("|%c|", prms->s[--j]);
-
-
+	while (!ft_isspecifier(prms->s[j++]));/*percorre a formatação*/
+	prms->i = j;/*atuaiza posição na string*/
+	ft_check_specifier(prms);
 }
