@@ -6,13 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 00:29:12 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 01:27:44 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 01:53:53 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int		main(void){
-	ft_printf("Hey\n", "text hehuehueh");
+	ft_printf("teste da stdarg.h ", "com struct\n");
 	return (0);
 }

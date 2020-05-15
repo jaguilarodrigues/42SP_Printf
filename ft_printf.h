@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 00:55:21 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 01:37:34 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@
 
 # include <stdio.h>
 
-// typedef struct		s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }					t_list;
+typedef struct		s_params
+{
+	const char	*s;
+	va_list		ap;
+	int			i;
+	int			len;
+}					t_params;
 
 int		ft_printf(const char *s, ...);
 void	ft_putchar(char c);

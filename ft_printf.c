@@ -6,33 +6,40 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:32:39 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 01:28:19 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/15 01:53:36 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+void	ft_start_params(t_params *prms, const char *s)
+{
+	prms->s = s;
+	prms->i = 0;
+	prms->len = 0;
+
+}
+
 int		ft_printf(const char *s, ...)
 {
-	int		i;
-	int		len;
-	va_list	ap;
+	t_params	prms;
 
-	va_start(ap, s);
-	while (s[i])
+	ft_start_params(&prms,s);
+	va_start(prms.ap, s);
+	while (prms.s[prms.i])
 	{
-		if (s[i] != '%')
+		if (prms.s[prms.i] != '%')
 		{
-			ft_putchar(s[i++]);
-			len++;
+			ft_putchar(prms.s[prms.i++]);
+			prms.len++;
 		}
 		// else
 		// {
 		// 	ft_manage_flag();
 		// }
 	}
-	printf("%s", (char *)va_arg(ap, void *));
-	va_end(ap);
+	printf("%s", (char *)va_arg(prms.ap, void *));
+	va_end(prms.ap);
 
-	return (len);
+	return (prms.len);
 }
