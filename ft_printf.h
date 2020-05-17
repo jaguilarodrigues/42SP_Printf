@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/15 04:29:52 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/17 02:51:15 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		ft_printf(const char *s, ...);
 void	ft_putchar(char c);
 void	ft_manage_flag(t_params *prms);
 void	ft_check_specifier(t_params *prms);
+void	ft_printf_c(t_params *prms);
 
 #endif

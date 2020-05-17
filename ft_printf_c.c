@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_manage_flag.c                                   :+:      :+:    :+:   */
+/*   ft_printf_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 03:02:49 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/05/17 02:42:23 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/05/17 02:45:42 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_isspecifier(char c)
+void	ft_printf_c(t_params *prms)
 {
-	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
-	|| c == 'u' || c == 'x' || c == 'X');
-}
-
-void	ft_manage_flag(t_params *prms)
-{
-	int	j;
-
-	j = prms->i;
-	while (!ft_isspecifier(prms->s[j++]));/*percorre a formatação*/
-	prms->i = --j;/*atuaiza posição na string*/
-	ft_check_specifier(prms);
+	ft_putchar((char)va_arg(prms->ap, int));
+	prms->len++;
 }
