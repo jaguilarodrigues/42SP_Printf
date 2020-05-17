@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 03:02:49 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/17 11:41:30 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,30 @@ int		ft_isspecifier(char c)
 	|| c == 'u' || c == 'x' || c == 'X');
 }
 
-void	ft_manage_flag(t_params *prms)
+int	ft_catch_flag(t_params *prms)
 {
 	int	j;
+	int	i;
 
-	j = prms->i;
-	while (!ft_isspecifier(prms->s[j++]));/*percorre a formatação*/
-	prms->i = --j;/*atuaiza posição na string*/
+	i = 0;
+	j = ++(prms->i);
+	while (!ft_isspecifier(prms->s[j++]));
+	j--;
+	if (!(prms->flag = malloc((j - prms->i) + 1 * sizeof(char))))
+		return (-1);
+	while (i < (j - prms->i))
+	{
+		if (prms->s[prms->i + i] != '*')
+			prms->flag[i] = prms->s[prms->i + i];
+		i++;
+	}
+	prms->flag[i] = '\0';
+	prms->i += i;
+	return 0;
+}
+
+void	ft_manage_flag(t_params *prms)
+{
+	ft_catch_flag(prms);
 	ft_check_specifier(prms);
 }
