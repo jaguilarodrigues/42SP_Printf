@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:24:29 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 18:31:55 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/18 03:10:56 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_printf_d(t_params *prms)
 {
-	ft_putnbr((int)va_arg(prms->ap, long int));
-	//prms->len += tamanho numero;
+	char	*s;
+
+	s = ft_itoa((int)va_arg(prms->ap, long int));
+	ft_putstr(s);
+	prms->len += ft_strlen(s);
 }
