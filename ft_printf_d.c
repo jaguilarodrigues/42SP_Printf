@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/15 00:29:12 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 18:46:15 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/05/17 17:24:29 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/05/17 18:31:55 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		main(void)
+void	ft_printf_d(t_params *prms)
 {
-	//ft_printf("teste da stdarg.h |%-20.i| \n", 23425);
-	//ft_putstr("abcdef\n");
-	return (0);
+	ft_putnbr((int)va_arg(prms->ap, long int));
+	//prms->len += tamanho numero;
 }

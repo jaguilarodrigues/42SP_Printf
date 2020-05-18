@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 03:43:44 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 03:06:39 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/17 18:34:21 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_check_specifier(t_params *prms)
 {
-	// if (prms->s[prms->i] == 'd' || prms->s[prms->i] == 'i')
-	// 	 //ft_printf_d();
+	if (prms->s[prms->i] == 'd' || prms->s[prms->i] == 'i')
+		ft_printf_d(prms);
 	if (prms->s[prms->i] == 'c')
-		 ft_printf_c(prms);
+		ft_printf_c(prms);
 // 	if (prms->s[prms->i] == 's')
-// 		 //ft_printf_s();
+// 		//ft_printf_s();
 // 	if (prms->s[prms->i] == 'p')
-// 		 //ft_printf_p();
+// 		//ft_printf_p();
 // 	if (prms->s[prms->i] == 'u')
-// 		 //ft_printf_u();
+// 		//ft_printf_u();
 // 	if (prms->s[prms->i] == 'x')
-// 		 //ft_printf_x();
+// 		//ft_printf_x();
 // 	if (prms->s[prms->i] == 'X')
-// 		 //ft_printf_X();
+// 		//ft_printf_X();
 	prms->i++;
 }
