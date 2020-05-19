@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 03:43:44 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/19 00:50:13 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/19 01:04:13 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_check_specifier(t_params *prms)
 // 		//ft_printf_u(prms);
 	if (prms->s[prms->i] == 'x')
 		ft_printf_x(prms);
-// 	if (prms->s[prms->i] == 'X')
-// 		//ft_printf_X(prms);
+	if (prms->s[prms->i] == 'X')
+		ft_printf_xup(prms);
 	prms->i++;
 }

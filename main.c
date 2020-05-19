@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 00:29:12 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/19 00:58:06 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/19 01:03:02 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int		main(void)
 	// printf("%d|\n", printf("|%x|", -56324234));
 	// printf("%d|\n", ft_printf("|%x|", -56324234));
 
-	// printf("%d|\n", printf("|%X|", -56324234));
-	// printf("%d|\n", ft_printf("|%X|", -56324234));
+	printf("%d|\n", printf("|%X|", -56324234));
+	printf("%d|\n", ft_printf("|%X|", -56324234));
 
 	return (0);
 }
