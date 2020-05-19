@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 00:29:12 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/18 04:15:14 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/19 00:43:21 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,16 @@ int		main(void)
 
 	// ft_printf("teste da stdarg.h |%-20.d| \n", -34235);
 	// printf("%X\n", -7376);
+
+	int n;
+	int *p;
+
+	p = &n;
+	printf("%d|\n", printf("|%p|", p));
+	printf("%d|\n", ft_printf("|%p|", p));
+
+	// printf("%d|\n", printf("|%x|", 56456));
+	// printf("%d|\n", ft_printf("|%x|", 56456));
+
 	return (0);
 }
