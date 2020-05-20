@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/19 01:11:01 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/20 02:06:58 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,18 @@ typedef struct		s_params
 {
 	const char		*s;
 	va_list			ap;
-	char			*flag;
 	int				i;
 	int				len;
 }					t_params;
+
+typedef struct		s_format
+{
+	char			*flag;
+	int				i;
+	int				neg;
+	int				width;
+	int				prec;
+}					t_format;
 
 int		ft_printf(const char *s, ...);
 void	ft_printf_c(t_params *prms);
