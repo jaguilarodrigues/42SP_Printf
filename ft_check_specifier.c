@@ -6,18 +6,18 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 03:43:44 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/19 01:08:55 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/21 14:38:34 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_check_specifier(t_params *prms)
+void	ft_check_specifier(t_params *prms, t_format *fmt)
 {
 	if (prms->s[prms->i] == 'd' || prms->s[prms->i] == 'i')
 		ft_printf_d(prms);
 	if (prms->s[prms->i] == 'c')
-		ft_printf_c(prms);
+		ft_printf_c(prms, fmt);
 	if (prms->s[prms->i] == 's')
 		ft_printf_s(prms);
 	if (prms->s[prms->i] == 'p')

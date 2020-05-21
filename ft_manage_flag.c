@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 14:31:00 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/21 14:38:23 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,5 @@ void		ft_manage_flag(t_params *prms)
 		j++;
 	}
 	prms->i = j;
-	ft_check_specifier(prms);
+	ft_check_specifier(prms, &fmt);
 }
