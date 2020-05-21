@@ -6,65 +6,101 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/20 02:19:59 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/21 14:31:00 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_isspecifier(char c)
+int			ft_isspecifier(char c)
 {
 	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
 	|| c == 'u' || c == 'x' || c == 'X');
 }
 
-void	ft_replace_star(t_params *prms)
-{
-	long int	num;
-	num = (long int)va_arg(prms->ap, void *);
-	num = num * 1;//apagar
-	// printf("/%ld/", num);
-}
-
-void	ft_start_flag(t_format *fmt)
+void		ft_start_flag(t_format *fmt)
 {
 	fmt->i = 0;
 	fmt->neg = 0;
 	fmt->width = 0;
-	fmt->prec = 0;
+	fmt->space = ' ';
+	fmt->prec = -1;
 }
 
-int	ft_catch_flag(t_params *prms)
+long int	ft_read_star(t_params *prms)
+{
+	long int	num;
+
+	num = (long int)va_arg(prms->ap, void *);
+	return (num);
+}
+
+long int	ft_read_num(t_params *prms, int *j)
+{
+	long int	num;
+
+	num = 0;
+	while (prms->s[*j] >= '0' && prms->s[*j] <='9')
+	{
+		num = (num *10) + (prms->s[*j] - '0');
+		(*j)++;
+	}
+	(*j)--;
+	return (num);
+}
+
+void		ft_manage_flag(t_params *prms)
 {
 	int			j;
-	int			i;
 	t_format	fmt;
+	long int	num;
 
-	i = 0;
 	j = ++(prms->i);
 	ft_start_flag(&fmt);
-	while (!ft_isspecifier(prms->s[j++]));
-	j--;
-	if (!(fmt.flag = malloc((j - prms->i) + 1 * sizeof(char))))
-		return (-1);
-	while (i < (j - prms->i))
+	while (!ft_isspecifier(prms->s[j]) && prms->s[j] != '\0')
 	{
-		if (prms->s[prms->i + i] != '*')
-			fmt.flag[i] = prms->s[prms->i + i];
+		if (prms->s[j] == '-')
+		{
+			fmt.neg = 1;
+			fmt.space = ' ';
+		}
+		else if (prms->s[j] == '0' && !fmt.neg)
+			fmt.space = '0';
+		else if (prms->s[j] == '.')
+		{
+			j++;
+			if (prms->s[j] == '*')
+			{
+				num = ft_read_star(prms);
+				if(num < 0)
+					num = -num;
+				fmt.prec = num;
+			}
+			else
+			{
+				fmt.prec = ft_read_num(prms, &j);
+			}
+		}
 		else
 		{
-			ft_replace_star(prms);
+			if (prms->s[j] == '*')
+			{
+				num = ft_read_star(prms);
+				if(num < 0)
+				{
+					fmt.neg = 1;
+					fmt.space = ' ';
+					num = -num;
+				}
+				fmt.width = num;
+			}
+			else
+			{
+				fmt.width = ft_read_num(prms, &j);
+			}
 		}
-
-		i++;
+		j++;
 	}
-	fmt.flag[i] = '\0';
-	prms->i += i;
-	return (0);
-}
-
-void	ft_manage_flag(t_params *prms)
-{
-	ft_catch_flag(prms);
+	prms->i = j;
 	ft_check_specifier(prms);
 }
