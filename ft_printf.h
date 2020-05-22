@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 17:45:34 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:31:42 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct		s_format
 
 int		ft_printf(const char *s, ...);
 void	ft_printf_c(t_params *prms, t_format *fmt);
-void	ft_printf_d(t_params *prms);
+void	ft_printf_d(t_params *prms, t_format *fmt);
 void	ft_printf_s(t_params *prms);
 void	ft_printf_p(t_params *prms);
 void	ft_printf_u(t_params *prms);

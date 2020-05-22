@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 03:43:44 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 14:38:34 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:32:49 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_check_specifier(t_params *prms, t_format *fmt)
 {
 	if (prms->s[prms->i] == 'd' || prms->s[prms->i] == 'i')
-		ft_printf_d(prms);
+		ft_printf_d(prms, fmt);
 	if (prms->s[prms->i] == 'c')
 		ft_printf_c(prms, fmt);
 	if (prms->s[prms->i] == 's')
