@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 21:39:48 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/21 21:48:40 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_printf_s(t_params *prms);
 void	ft_printf_p(t_params *prms);
 void	ft_printf_u(t_params *prms);
 void	ft_printf_x(t_params *prms, t_format *fmt);
-void	ft_printf_xup(t_params *prms);
+void	ft_printf_xup(t_params *prms, t_format *fmt);
 void	ft_manage_flag(t_params *prms);
 void	ft_check_specifier(t_params *prms, t_format *fmt);
 int		ft_strlen(char *s);
