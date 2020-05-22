@@ -6,7 +6,7 @@
 #    By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 00:38:44 by jaqrodri          #+#    #+#              #
-#    Updated: 2020/05/15 03:20:26 by jaqrodri         ###   ########.fr        #
+#    Updated: 2020/05/22 18:14:47 by jaqrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,20 +16,22 @@ FLAGS = -Wall \
 		-Wextra\
 		-Werror\
 
-SRCS =	*.c
+SRCS =	$(wildcard *.c)
 
 OBJECTS = $(subst .c,.o,$(SRCS))
 
 INCLUDES = ft_printf.h
 
+HEADER = ./
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar -rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	ar -rc $@ $^
+	ranlib $@
 
-.o: .c
-	gcc -c $(FLAGS) $(SRCS) -I $(HEADER)
+%.o: %.c
+	gcc -c $(FLAGS) $< -o $@
 
 test:$(NAME)
 	gcc -g $(FLAGS) $(SRCS) $(NAME)
