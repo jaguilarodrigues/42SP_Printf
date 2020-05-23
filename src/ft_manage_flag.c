@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 14:38:23 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 19:51:16 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void		ft_start_flag(t_format *fmt)
 	fmt->neg = 0;
 	fmt->width = 0;
 	fmt->space = ' ';
-	fmt->prec = -1;
+	fmt->prec = 0;
 }
 
-long int	ft_read_star(t_params *prms)
+int	ft_read_star(t_params *prms)
 {
-	long int	num;
+	int	num;
 
-	num = (long int)va_arg(prms->ap, void *);
+	num = va_arg(prms->ap, int);
 	return (num);
 }
 
@@ -49,12 +49,14 @@ long int	ft_read_num(t_params *prms, int *j)
 	return (num);
 }
 
-void		ft_manage_flag(t_params *prms)
+int		ft_manage_flag(t_params *prms)
 {
 	int			j;
+	int			prec;
 	t_format	fmt;
 	long int	num;
 
+	prec = 0;
 	j = ++(prms->i);
 	ft_start_flag(&fmt);
 	while (!ft_isspecifier(prms->s[j]) && prms->s[j] != '\0')
@@ -64,23 +66,25 @@ void		ft_manage_flag(t_params *prms)
 			fmt.neg = 1;
 			fmt.space = ' ';
 		}
-		else if (prms->s[j] == '0' && !fmt.neg)
-			fmt.space = '0';
 		else if (prms->s[j] == '.')
 		{
 			j++;
+			prec = 1;
 			if (prms->s[j] == '*')
 			{
 				num = ft_read_star(prms);
-				if(num < 0)
-					num = -num;
-				fmt.prec = num;
+				fmt.prec = (num < 0) ? 0 : num;
 			}
+			else if (prms->s[j] >= '0' && prms->s[j] <='9')
+				fmt.prec = ft_read_num(prms, &j);
 			else
 			{
-				fmt.prec = ft_read_num(prms, &j);
+				j--;
+				fmt.prec = 0;
 			}
 		}
+		else if (prms->s[j] == '0' && !fmt.neg && prec == 0)
+			fmt.space = '0';
 		else
 		{
 			if (prms->s[j] == '*')
@@ -94,13 +98,14 @@ void		ft_manage_flag(t_params *prms)
 				}
 				fmt.width = num;
 			}
-			else
-			{
+			else if (prms->s[j] >= '0' && prms->s[j] <='9')
 				fmt.width = ft_read_num(prms, &j);
-			}
 		}
 		j++;
 	}
+	if(prms->s[j] == '\0')
+		return (-1);
 	prms->i = j;
 	ft_check_specifier(prms, &fmt);
+	return (1);
 }

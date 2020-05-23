@@ -6,13 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:53:28 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/18 03:45:28 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/22 18:13:22 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_count_number(int n)
+static int		ft_count_number(int n)
 {
 	int		i;
 	size_t	aux;

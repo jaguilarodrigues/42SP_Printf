@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_d.c                                      :+:      :+:    :+:   */
+/*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 17:24:29 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 19:13:40 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/05/19 01:09:11 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/05/21 22:00:35 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printf_d(t_params *prms, t_format *fmt)
+void	ft_printf_u(t_params *prms, t_format *fmt)
 {
 	char	*s;
 	int		slen;
 
-	s = ft_itoa((int)va_arg(prms->ap, long int));
+	s = ft_itoa_base(va_arg(prms->ap, unsigned int), 10, 'a');
 	slen = ft_strlen(s);
 
 	if(fmt->prec > slen)
@@ -36,3 +36,4 @@ void	ft_printf_d(t_params *prms, t_format *fmt)
 	else
 		prms->len += (slen + fmt->prec);
 }
+
