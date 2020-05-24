@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 13:29:33 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 17:17:09 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 20:57:53 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_putnbr(int n)
 	}
 	if (un > 9)
 	{
-		ft_putnbr(un/10);
-		ft_putnbr(un%10);
+		ft_putnbr(un / 10);
+		ft_putnbr(un % 10);
 	}
 	else
 		ft_putchar((un % 10) + '0');

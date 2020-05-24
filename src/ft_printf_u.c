@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 01:09:11 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 22:00:35 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 21:00:15 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	ft_printf_u(t_params *prms, t_format *fmt)
 
 	s = ft_itoa_base(va_arg(prms->ap, unsigned int), 10, 'a');
 	slen = ft_strlen(s);
-
-	if(fmt->prec > slen)
+	if (fmt->prec > slen)
 		fmt->prec = fmt->prec - slen;
 	else
 		fmt->prec = 0;
@@ -30,10 +29,8 @@ void	ft_printf_u(t_params *prms, t_format *fmt)
 	ft_putstr(s);
 	if (fmt->neg)
 		ft_putnchar(fmt->width - (fmt->prec + slen), fmt->space);
-
 	if (fmt->width > slen)
 		prms->len += fmt->width;
 	else
 		prms->len += (slen + fmt->prec);
 }
-

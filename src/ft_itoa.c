@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:53:28 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/22 18:13:22 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 21:03:10 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static int		ft_count_number(int n)
 	}
 	else
 		aux = n;
-	while((aux = aux/10) > 0)
+	while ((aux = aux / 10) > 0)
 		i++;
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		i;
 	size_t	nn;
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 
 	i = ft_count_number(n);
 	if (!(strn = malloc((i + 1) * sizeof(char))))
-		return NULL;
+		return (NULL);
 	if (n < 0)
 	{
 		strn[0] = '-';

@@ -6,7 +6,7 @@
 #    By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 00:38:44 by jaqrodri          #+#    #+#              #
-#    Updated: 2020/05/22 23:52:09 by jaqrodri         ###   ########.fr        #
+#    Updated: 2020/05/23 22:02:04 by jaqrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,10 @@ SRCS =	${SRC_DIR}/ft_manage_flag.c \
 		${SRC_DIR}/ft_printf_p.c \
 		${SRC_DIR}/ft_printf.c \
 		${SRC_DIR}/ft_putstr.c \
+		${SRC_DIR}/ft_isspecifier.c \
+		${SRC_DIR}/ft_catch_precision.c \
+		${SRC_DIR}/ft_read_star.c \
+		${SRC_DIR}/ft_read_num.c \
 
 OBJ_DIR = ./objects
 

@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_s.c                                      :+:      :+:    :+:   */
+/*   ft_isspecifier.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/18 03:06:23 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 20:56:53 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/05/23 21:04:28 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/05/23 21:04:51 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printf_s(t_params *prms)
+int			ft_isspecifier(char c)
 {
-	char	*s;
-
-	s = va_arg(prms->ap, char *);
-	ft_putstr(s);
-	prms->len += ft_strlen(s);
+	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
+	|| c == 'u' || c == 'x' || c == 'X');
 }

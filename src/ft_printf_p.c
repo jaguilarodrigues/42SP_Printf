@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:31:32 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/19 00:36:41 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 20:56:33 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ void	ft_printf_p(t_params *prms)
 	ft_putstr(s);
 	prms->len += ft_strlen(s) + 2;
 }
-

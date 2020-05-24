@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 17:45:07 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/21 17:45:24 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 20:59:09 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_putnchar(int n, int c)
 	int i;
 
 	i = 0;
-	while(i++ < n)
+	while (i++ < n)
 		ft_putchar(c);
 }

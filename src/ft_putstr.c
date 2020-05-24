@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 18:35:26 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/17 18:43:40 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/23 20:57:37 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr(char *s)
 {
-	while(*s)
+	while (*s)
 		ft_putchar(*s++);
 }

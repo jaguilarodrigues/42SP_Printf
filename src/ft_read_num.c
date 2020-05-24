@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_s.c                                      :+:      :+:    :+:   */
+/*   ft_read_num.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/18 03:06:23 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 20:56:53 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/05/23 22:00:29 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/05/23 22:00:51 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printf_s(t_params *prms)
+int		ft_read_num(t_params *prms, int *j)
 {
-	char	*s;
+	int	num;
 
-	s = va_arg(prms->ap, char *);
-	ft_putstr(s);
-	prms->len += ft_strlen(s);
+	num = 0;
+	while (prms->s[*j] >= '0' && prms->s[*j] <= '9')
+	{
+		num = (num * 10) + (prms->s[*j] - '0');
+		(*j)++;
+	}
+	(*j)--;
+	return (num);
 }
