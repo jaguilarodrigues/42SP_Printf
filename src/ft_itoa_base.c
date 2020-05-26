@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 03:20:03 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 21:00:34 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/25 02:51:44 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_itoa_base(size_t n, int base, int alf)
 
 	i = 1;
 	aux = n;
-	while ((aux = aux / base) > 1)
+	while ((aux = aux / base) > 0)
 		i++;
 	if (!(conum = malloc((i + 1) * sizeof(char))))
 		return (NULL);

@@ -6,13 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:32:39 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 21:02:02 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/26 19:47:35 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_start_params(t_params *prms, const char *s)
+static void	ft_start_params(t_params *prms, const char *s)
 {
 	prms->s = s;
 	prms->i = 0;

@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 01:31:40 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 22:00:47 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/25 03:07:26 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void		ft_start_flag(t_format *fmt)
 	fmt->neg = 0;
 	fmt->width = 0;
 	fmt->space = ' ';
-	fmt->prec = 0;
+	fmt->prec = -1;
 }
 
 static void		ft_catch_width(int *j, t_params *prms, t_format *fmt)
@@ -54,7 +54,7 @@ int				ft_manage_flag(t_params *prms)
 		if (prms->s[j] == '-')
 			fmt.neg = 1;
 		else if (prms->s[j] == '.')
-			ft_catch_precision(&prec, &j, prms, &fmt);
+			ft_catch_prec(&prec, &j, prms, &fmt);
 		else if (prms->s[j] == '0' && !fmt.neg && prec == 0)
 			fmt.space = '0';
 		else

@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:50:25 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 21:01:11 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/26 19:44:01 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,17 @@ void	ft_printf_x(t_params *prms, t_format *fmt)
 {
 	char	*s;
 	int		slen;
+	int		notspace;
 
 	s = ft_itoa_base((size_t)va_arg(prms->ap, void *), 16, 'a');
-	slen = ft_strlen(s);
-	if (fmt->prec > slen)
-		fmt->prec = fmt->prec - slen;
-	else
-		fmt->prec = 0;
-	if (!(fmt->neg))
-		ft_putnchar(fmt->width - (fmt->prec + slen), fmt->space);
-	ft_putnchar(fmt->prec, '0');
-	ft_putstr(s);
+	slen = (fmt->prec == 0 && *s == '0') ? 0 : ft_strlen(s);
+	notspace = (fmt->prec > slen) ? fmt->prec : slen;
+	(fmt->space == '0' && fmt->prec >= 0) ? fmt->space = ' ' : 0;
 	if (fmt->neg)
-		ft_putnchar(fmt->width - (fmt->prec + slen), fmt->space);
-	if (fmt->width > slen)
-		prms->len += fmt->width;
-	else
-		prms->len += (slen + fmt->prec);
+		ft_put_dux(s, slen, fmt);
+	ft_putnchar(fmt->width - notspace, fmt->space);
+	if (!(fmt->neg))
+		ft_put_dux(s, slen, fmt);
+	prms->len += (fmt->width > notspace) ? fmt->width : notspace;
+	ft_strdel(&s);
 }

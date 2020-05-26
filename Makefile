@@ -6,7 +6,7 @@
 #    By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 00:38:44 by jaqrodri          #+#    #+#              #
-#    Updated: 2020/05/23 22:02:04 by jaqrodri         ###   ########.fr        #
+#    Updated: 2020/05/26 19:48:43 by jaqrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SRCS =	${SRC_DIR}/ft_manage_flag.c \
 		${SRC_DIR}/ft_printf_s.c \
 		${SRC_DIR}/ft_strlen.c \
 		${SRC_DIR}/ft_printf_x.c \
-		${SRC_DIR}/ft_strjoin.c \
 		${SRC_DIR}/ft_printf_c.c \
 		${SRC_DIR}/ft_printf_xup.c \
 		${SRC_DIR}/ft_putnchar.c \
@@ -39,6 +38,9 @@ SRCS =	${SRC_DIR}/ft_manage_flag.c \
 		${SRC_DIR}/ft_catch_precision.c \
 		${SRC_DIR}/ft_read_star.c \
 		${SRC_DIR}/ft_read_num.c \
+		${SRC_DIR}/ft_printf_percent.c \
+		${SRC_DIR}/ft_strdel.c \
+		${SRC_DIR}/ft_put_dux.c \
 
 OBJ_DIR = ./objects
 

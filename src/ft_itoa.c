@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:53:28 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/23 21:03:10 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/25 03:00:04 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 static int		ft_count_number(int n)
 {
-	int		i;
-	size_t	aux;
+	int			i;
+	long int	aux;
 
-	i = 0;
-	if (n < 0)
+	aux = n;
+	i = 1;
+	if (aux == 0)
+		return (1);
+	if (aux < 0)
 	{
 		i++;
-		aux = -n;
+		aux = -aux;
 	}
-	else
-		aux = n;
 	while ((aux = aux / 10) > 0)
 		i++;
 	return (i);
@@ -32,26 +33,28 @@ static int		ft_count_number(int n)
 
 char			*ft_itoa(int n)
 {
-	int		i;
-	size_t	nn;
-	char	*strn;
+	int			i;
+	long int	nn;
+	char		*strn;
 
 	i = ft_count_number(n);
 	if (!(strn = malloc((i + 1) * sizeof(char))))
 		return (NULL);
-	if (n < 0)
+	nn = n;
+	if (nn < 0)
 	{
 		strn[0] = '-';
-		nn = -n;
+		nn = -nn;
 	}
+	strn[i--] = '\0';
+	if (nn == 0)
+		strn[0] = '0';
 	else
-		nn = n;
-	strn[i + 1] = '\0';
-	while (i >= 0 && nn > 0)
-	{
-		strn[i] = (nn % 10) + '0';
-		nn = nn / 10;
-		i--;
-	}
+		while (i >= 0 && nn > 0)
+		{
+			strn[i] = (nn % 10) + '0';
+			nn = nn / 10;
+			i--;
+		}
 	return (strn);
 }

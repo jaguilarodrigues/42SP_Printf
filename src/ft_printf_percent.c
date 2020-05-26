@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_catch_precision.c                               :+:      :+:    :+:   */
+/*   ft_printf_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/23 21:50:29 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/25 03:07:18 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/05/25 15:25:00 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/05/26 15:35:53 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_catch_prec(int *prec, int *j, t_params *prms, t_format *fmt)
+void	ft_printf_percent(t_params *prms, t_format *fmt)
 {
-	int	num;
-
-	*j += 1;
-	*prec = 1;
-	if (prms->s[*j] == '*')
-	{
-		num = ft_read_star(prms);
-		fmt->prec = num;
-	}
-	else if (prms->s[*j] >= '0' && prms->s[*j] <= '9')
-		fmt->prec = ft_read_num(prms, j);
-	else
-	{
-		*j -= 1;
-		fmt->prec = 0;
-	}
+	if (!(fmt->neg))
+		ft_putnchar(fmt->width - 1, fmt->space);
+	ft_putchar('%');
+	if (fmt->neg)
+		ft_putnchar(fmt->width - 1, fmt->space);
+	prms->len += (fmt->width > 0) ? fmt->width : 1;
 }
