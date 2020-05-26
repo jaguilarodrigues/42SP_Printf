@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 03:06:23 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 20:48:22 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/26 20:49:42 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_printf_s(t_params *prms, t_format *fmt)
 
 	s = va_arg(prms->ap, char *);
 	(s == NULL && fmt->prec < 6 && fmt->prec > -1) ? fmt->prec = 0 : 0;
-	// (s == NULL) ? s = "(null)" : 0;
+	(s == NULL) ? s = "(null)" : 0;
 	slen = ft_strlen(s);
 	notspace = (fmt->prec < slen && fmt->prec > -1) ? fmt->prec : slen;
 	// (fmt->space == '0') ? fmt->space = ' ' : 0;
