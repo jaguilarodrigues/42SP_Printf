@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 03:20:03 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 23:59:35 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/27 04:17:22 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*ft_make_eight(char *str, char c)
 	return (&str[i]);
 }
 
-char	*ft_itoa_base(size_t n, int base, int alf, char c)
+char		*ft_itoa_base(size_t n, int base, int alf, char c)
 {
 	char		*conum;
 	size_t		aux;

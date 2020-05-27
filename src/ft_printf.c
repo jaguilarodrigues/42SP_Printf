@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:32:39 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 19:47:35 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/27 04:17:51 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_start_params(t_params *prms, const char *s)
 	prms->len = 0;
 }
 
-int		ft_printf(const char *s, ...)
+int			ft_printf(const char *s, ...)
 {
 	t_params	prms;
 

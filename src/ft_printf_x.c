@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:50:25 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 23:55:49 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/27 04:16:04 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ void	ft_printf_x(t_params *prms, t_format *fmt)
 	if (!(fmt->neg))
 		ft_put_dux(s, slen, fmt);
 	prms->len += (fmt->width > notspace) ? fmt->width : notspace;
-	// ft_strdel(&s);
 }

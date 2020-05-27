@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 23:51:20 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/27 04:18:54 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ void			ft_catch_prec(int *prec, int *j, t_params *prms, t_format *fmt);
 int				ft_read_star(t_params *prms);
 int				ft_read_num(t_params *prms, int *j);
 void			ft_put_dux(char *s, int slen, t_format *fmt);
-void			ft_strdel(char **s);
 
 #endif
