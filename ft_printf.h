@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 00:45:13 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 19:44:38 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/26 23:51:20 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int				ft_manage_flag(t_params *prms);
 void			ft_check_specifier(t_params *prms, t_format *fmt);
 int				ft_strlen(char *s);
 char			*ft_strjoin(char const *s1, char const *s2);
-char			*ft_itoa_base(size_t n, int base, int alf);
+char			*ft_itoa_base(size_t n, int base, int alf, char c);
 char			*ft_itoa(int n);
 void			ft_putnbr(int n);
 void			ft_putstr(char *s, int len);

@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:50:25 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/05/26 19:44:01 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/05/26 23:55:49 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_printf_x(t_params *prms, t_format *fmt)
 	int		slen;
 	int		notspace;
 
-	s = ft_itoa_base((size_t)va_arg(prms->ap, void *), 16, 'a');
+	s = ft_itoa_base((size_t)va_arg(prms->ap, void *), 16, 'a', 'x');
 	slen = (fmt->prec == 0 && *s == '0') ? 0 : ft_strlen(s);
 	notspace = (fmt->prec > slen) ? fmt->prec : slen;
 	(fmt->space == '0' && fmt->prec >= 0) ? fmt->space = ' ' : 0;
@@ -28,5 +28,5 @@ void	ft_printf_x(t_params *prms, t_format *fmt)
 	if (!(fmt->neg))
 		ft_put_dux(s, slen, fmt);
 	prms->len += (fmt->width > notspace) ? fmt->width : notspace;
-	ft_strdel(&s);
+	// ft_strdel(&s);
 }
